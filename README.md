@@ -1,6 +1,15 @@
 # CineLog
 
-A personal movie and TV show tracker built with Node.js, Express, MongoDB, and the TMDB API.
+**Submitted by:** Dylan Pierce 
+**Group Members:** Dylan Pierce
+**App Description:** Search movies and TV shows via the TMDB API and track them in a personal watchlist with status, personal rating, and notes.
+**YouTube Video Link:** <!-- TODO: add demo video link -->
+**APIs:** TMDB (https://developer.themoviedb.org/reference/intro/getting-started)
+**Contact Email:** dpierce5@terpmail.umd.edu
+**Deployed App Link:** https://cinelog-6zio.onrender.com/
+**AI Use:** 1. Claude Code
+
+---
 
 ## Features
 
@@ -19,7 +28,7 @@ npm install
 
 ### 2. Configure environment variables
 
-Copy `.env` and fill in your values:
+Create a `.env` file in the project root with:
 
 | Variable | Description |
 |---|---|
@@ -38,9 +47,9 @@ npm start     # production
 
 1. Push this project to a GitHub repo.
 2. Create a new **Web Service** on Render, connect the repo.
-3. Set **Build Command** to `npm install` and **Start Command** to `node server.js`.
-4. Add your environment variables in the Render dashboard.
-5. Deploy — Render provides a free HTTPS URL.
+3. Set **Build Command** to `npm install` and **Start Command** to `npm start`.
+4. Add your environment variables in the Render dashboard (omit `PORT` — Render injects it).
+5. In MongoDB Atlas, allow Render to connect via Network Access (`0.0.0.0/0` is simplest for the free tier).
 
 ## Project Structure
 
