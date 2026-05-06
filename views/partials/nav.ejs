@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <a href="/" class="nav-brand">CineLog</a>
+  <div class="nav-links">
+    <% if (userId) { %>
+      <a href="/search">Search</a>
+      <a href="/watchlist">My List</a>
+      <form action="/logout" method="POST" style="display:inline">
+        <button type="submit" class="btn-link">Log Out (<%= username %>)</button>
+      </form>
+    <% } else { %>
+      <a href="/login">Log In</a>
+      <a href="/register">Register</a>
+    <% } %>
+  </div>
+</nav>

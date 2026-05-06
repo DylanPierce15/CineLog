@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Watchlist — CineLog</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <%- include('partials/nav') %>
+
+  <main class="container">
+    <div class="watchlist-header">
+      <h2><%= username %>'s Watchlist</h2>
+      <a href="/search" class="btn btn-primary">+ Add More</a>
+    </div>
+
+    <!-- Status filter tabs -->
+    <div class="filter-tabs">
+      <a href="/watchlist" class="tab <%= statusFilter === '' ? 'tab-active' : '' %>">All</a>
+      <% statuses.forEach(s => { %>
+        <a href="/watchlist?status=<%= encodeURIComponent(s) %>"
+           class="tab <%= statusFilter === s ? 'tab-active' : '' %>">
+          <%= s.charAt(0).toUpperCase() + s.slice(1) %>
+        </a>
+      <% }) %>
+    </div>
+
+    <% if (entries.length === 0) { %>
+      <p class="no-results">Nothing here yet. <a href="/search">Search for something to add.</a></p>
+    <% } else { %>
+      <div class="watchlist-grid">
+        <% entries.forEach(entry => { %>
+          <div class="wl-card">
+            <% if (entry.posterPath) { %>
+              <img src="<%= entry.posterPath %>" alt="<%= entry.title %>" class="poster" loading="lazy" />
+            <% } else { %>
+              <div class="poster poster-placeholder">No Image</div>
+            <% } %>
+            <div class="card-body">
+              <h3 class="card-title"><%= entry.title %></h3>
+              <p class="card-meta">
+                <span class="badge badge-<%= entry.type %>"><%= entry.type.toUpperCase() %></span>
+                <span class="badge badge-status"><%= entry.status %></span>
+              </p>
+              <% if (entry.tmdbRating) { %>
+                <p class="card-meta">TMDB ★ <%= entry.tmdbRating.toFixed(1) %></p>
+              <% } %>
+              <% if (entry.rating) { %>
+                <p class="card-meta">Your rating: <strong><%= entry.rating %>/10</strong></p>
+              <% } %>
+              <% if (entry.notes) { %>
+                <p class="entry-notes"><%= entry.notes %></p>
+              <% } %>
+              <div class="card-actions">
+                <a href="/watchlist/edit/<%= entry._id %>" class="btn btn-secondary btn-sm">Edit</a>
+                <form action="/watchlist/delete/<%= entry._id %>" method="POST" onsubmit="return confirm('Remove from watchlist?')">
+                  <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

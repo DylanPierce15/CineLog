@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineLog</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <%- include('partials/nav') %>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Track What You Watch</h1>
+      <p>Search millions of movies and TV shows, add them to your personal watchlist, rate them, and keep notes.</p>
+      <% if (userId) { %>
+        <a href="/search" class="btn btn-primary">Search &amp; Add</a>
+        <a href="/watchlist" class="btn btn-secondary">My Watchlist</a>
+      <% } else { %>
+        <a href="/register" class="btn btn-primary">Get Started</a>
+        <a href="/login" class="btn btn-secondary">Log In</a>
+      <% } %>
+    </div>
+  </main>
+</body>
+</html>
