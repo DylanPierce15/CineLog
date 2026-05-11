@@ -1,13 +1,21 @@
 # CineLog
 
 **Submitted by:** Dylan Pierce (dpierce5)
+
 **Group Members:** Dylan Pierce (dpierce5)
+
 **App Description:** Search movies and TV shows via the TMDB API and track them in a personal watchlist with status, personal rating, and notes.
+
 **YouTube Video Link:** <!-- TODO: add demo video link -->
+
 **APIs:** TMDB (https://developer.themoviedb.org/reference/intro/getting-started)
+
 **Contact Email:** dpierce5@terpmail.umd.edu
+
 **Deployed App Link:** https://cinelog-6zio.onrender.com/
+
 **AI Use:** 1. Claude Code
+
 
 ---
 
