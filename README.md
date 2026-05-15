@@ -6,7 +6,7 @@
 
 **App Description:** Search movies and TV shows via the TMDB API and track them in a personal watchlist with status, personal rating, and notes.
 
-**YouTube Video Link:** 
+**YouTube Video Link:** https://youtu.be/gucNec2r0Uk
 
 **APIs:** TMDB (https://developer.themoviedb.org/reference/intro/getting-started)
 
